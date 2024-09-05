@@ -98,6 +98,8 @@ How to start Jenkins server:
    - sudo su jenkins
 8. Follow Troubleshooting Steps: If you encounter any issues, refer to the "Challenges with Jenkins" section for guidance.
 
+## Kubernetes
+
 
 
 
