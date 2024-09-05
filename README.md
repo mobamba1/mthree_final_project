@@ -11,15 +11,13 @@ Front-End HTML CSS files, backend Python, SQL Lite, Dcoker, Jenkins, Kubernetes,
 - [Introduction](#introduction)
 - [SRE Concept and applications](#introduction)
 - [Front-End](#front-end)
-- [Back-End](#back-end)
+- [Back-End](#Back-EndDatabase)
 - [Docker](#docker)
 - [Jenkins](#jenkins)
 - [Kubernetes](#kubernetes)
 - [Grafana](#grafana)
 - [Testing](#testing)
-- [How to run](#testing)
-- [Difficulties](#testing)
-- [Future improvements](#introduction)
+- [Future Improvements](#FutureImprovements)
 - [Extras](#extras)
 
 ## Introduction
@@ -36,12 +34,12 @@ To monitor the system's performance, Grafana was implemented, providing useful i
 
 ## Front-End
 
-The front-end of the application consists of simple HTML and CSS files found in /python_scripts/templates and /python_scripts/static respectively. These two provide a basic and user-friendly interface to communicate with the user and send the information provided through an HTML form to the backend script.
+The front end of the app is made up of basic HTML and CSS files, which are stored in /python_scripts/templates for HTML and /python_scripts/static for CSS. These files provide a simple, user-friendly interface that lets users interact with the app and submit their information through an HTML form to the backend for processing.
 
 My Contribution:
 - Code review and changes for import modules and text.
 
-## Back-End
+## Back-End and Database
 
 The back-end of the application is located in a single file found in /python_scripts/app.py. This script loads the database, reads and processes the user input, updates the database and sends the processed data to the result page. 
 
@@ -101,6 +99,8 @@ How to start Jenkins server:
 ## Kubernetes
 Kubernetes was used to deploy Docker images of the Flask application. By using Minikube along with Docker Hub, I was able to easily orchestrate the services, seamlessly pulling the latest image from Docker Hub for deployment.
 
+## Add Kubernetes Image here
+
 How to deploy images with kubemini:
 
 1. First, ensure that Minikube is installed on your system.
@@ -133,17 +133,13 @@ How to deploy images with kubemini:
 11. After configuring Nginx, your Flask app should be accessible via the instance's public IP on port 5000:
     - http://instance_ip:5000
 
-
-
-   
-
-
 Challenges:
 - Initially, I tried to orchestrate the application using a local Docker image, but I ran into difficulties. As a result, I decided to use the more standard approach of pulling the image from Docker Hub.
 - Another challenge was that Minikube only supports local orchestration, which made it difficult for the Flask app to be accessible from the internet. I resolved this by using Nginx as a reverse proxy. Nginx listened on a specific port and forwarded the connection to the internal port where the Kubernetes service running the Flask app was hosted.
 - Running Minikube alongside a Jenkins server on a t2.micro instance resulted in poor performance for both services, as Minikube requires a minimum of 2 CPU cores to function effectively. Additionally, Docker needed to be running to build and push images to Docker Hub. To resolve this, I communicated to the team that upgrading the EC2 instance was essential for running all these tools smoothly. We agreed to share the cost and upgraded the instance, which significantly improved performance.
 - I encountered an issue where Minikube would struggle to load the plugins properly whenever I stopped and started it again. To fix this, instead of simply stopping Minikube, I opted to delete the cluster and start fresh each time. This approach seemed more practical and closer to real-world scenarios, as it allowed the project to be quickly downloaded and set up from scratch without persistent issues.
 
+## Grafana
 
 
 
