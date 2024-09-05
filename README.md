@@ -44,6 +44,19 @@ The front-end of the application consists of simple HTML and CSS files found in 
 The back-end of the application is located in a single file found in /python_scripts/app.py. This script loads the database, reads and processes the user input, updates the database and sends the processed data to the result page. 
 
 ## Docker
+I created a Docker image using a Dockerfile, which allowed me to containerize the application for consistent deployment. To ensure it was working properly, I set up the container to access port 5000, which was necessary for the application’s functionality. 
+Later on, I will be using Docker Hub to store my Docker image, allowing Minikube to pull the image from the remote repository for deployment in my Kubernetes environment.
+
+## Challenges with Docker
+One challenge I faced was ensuring that port 5000 was open in the AWS security groups, as the container needed to communicate through that port. To apply this change, I had to restart or stop and start the AWS instance to make sure the new settings took effect.
+Another challenge was that, since the application was still being updated, I had to ensure any changes were reflected not only in the Dockerfile but also in the requirements.txt file. This was critical to making sure the right packages were installed within the container, allowing the application to run smoothly without any issues.
+
+## How to Deploy Docker Container
+Build docker image:
+- docker build -t your_image_name .
+
+Run docker container:
+- docker run -d -p 5000:5000 your_image_name
 
 ##Extras
 Original github link: https://github.com/ledmarceli/mthree_final_project
