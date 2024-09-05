@@ -99,6 +99,50 @@ How to start Jenkins server:
 8. Follow Troubleshooting Steps: If you encounter any issues, refer to the "Challenges with Jenkins" section for guidance.
 
 ## Kubernetes
+Kubernetes was used to deploy Docker images of the Flask application. By using Minikube along with Docker Hub, I was able to easily orchestrate the services, seamlessly pulling the latest image from Docker Hub for deployment.
+
+How to deploy images with kubemini:
+
+1. First, ensure that Minikube is installed on your system.
+2. To verify if Minikube is running:
+   - minikube status
+3. If Minikube is not running, start it with:
+   - minikube start
+4. Stop or Delete Minikube (When required):
+   - minikube stop
+   - minikube delete
+5. Initially, no pods or services will be running. To start them, apply your Kubernetes deployment and service configurations:
+   - kubectl apply -f deployment.yaml
+   - kubectl apply -f service.yaml
+6. After applying the configurations, check that your pods and services are running:
+   - kubectl get pods
+   - kubectl get services
+7. The service is where your Flask app will be running, and it will use a NodePort for Minikube services. To verify that the Flask app is running:
+   - Check Flask App with curl
+   - minikube ip
+   - curl minikube_ip:nordport
+8. Once you've confirmed the correct Minikube IP and NodePort for your Flask app, install Nginx to act as a reverse proxy. This will route external traffic to your Flask app running in Minikube.
+9. To configure Nginx, edit the default configuration file:
+    - vim /etc/nginx/sites-available/default
+    - Update the configuration with your instance's public IP and Minikube's IP/NodePort:
+    - server_name <your-instance-public-ip>;  # Use the public IP of your instance
+    - proxy_pass http://<minikube-ip>:<NodePort>;  # Use Minikube's IP and the NodePort of your service
+10. Check Nginx Configuration and Reload:
+    - sudo nginx -t
+    - sudo systemctl reload nginx
+11. After configuring Nginx, your Flask app should be accessible via the instance's public IP on port 5000:
+    - http://instance_ip:5000
+
+
+
+   
+
+
+Challenges:
+- Initially, I tried to orchestrate the application using a local Docker image, but I ran into difficulties. As a result, I decided to use the more standard approach of pulling the image from Docker Hub.
+- Another challenge was that Minikube only supports local orchestration, which made it difficult for the Flask app to be accessible from the internet. I resolved this by using Nginx as a reverse proxy. Nginx listened on a specific port and forwarded the connection to the internal port where the Kubernetes service running the Flask app was hosted.
+- Running Minikube alongside a Jenkins server on a t2.micro instance resulted in poor performance for both services, as Minikube requires a minimum of 2 CPU cores to function effectively. Additionally, Docker needed to be running to build and push images to Docker Hub. To resolve this, I communicated to the team that upgrading the EC2 instance was essential for running all these tools smoothly. We agreed to share the cost and upgraded the instance, which significantly improved performance.
+- I encountered an issue where Minikube would struggle to load the plugins properly whenever I stopped and started it again. To fix this, instead of simply stopping Minikube, I opted to delete the cluster and start fresh each time. This approach seemed more practical and closer to real-world scenarios, as it allowed the project to be quickly downloaded and set up from scratch without persistent issues.
 
 
 
@@ -125,7 +169,11 @@ How to start Jenkins server:
 
 
 
-##Extras
+
+
+
+## Extras
+
 Original github link: https://github.com/ledmarceli/mthree_final_project
 
 Videos:
