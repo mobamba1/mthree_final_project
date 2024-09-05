@@ -38,9 +38,15 @@ To monitor the system's performance, Grafana was implemented, providing useful i
 
 The front-end of the application consists of simple HTML and CSS files found in /python_scripts/templates and /python_scripts/static respectively. These two provide a basic and user-friendly interface to communicate with the user and send the information provided through an HTML form to the backend script.
 
+My Contribution:
+- Code review and changes for import modules and text.
+
 ## Back-End
 
 The back-end of the application is located in a single file found in /python_scripts/app.py. This script loads the database, reads and processes the user input, updates the database and sends the processed data to the result page. 
+
+My Contribution:
+-  Research for JSON data Passing for Grafan
 
 ## Docker
 I created a Docker image using a Dockerfile, which allowed me to containerize the application for consistent deployment. To ensure it was working properly, I set up the container to access port 5000, which was necessary for the application’s functionality. 
