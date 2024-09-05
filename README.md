@@ -1,7 +1,6 @@
 # Income Tax Calculator App 
 
-Authors: John Dela Cruz, Eduar Mancera, Marceli Ciesielski
-This project was submitted as a final project assignment at the mthree academy training on the 6th of September 2024.
+Authors: John Dela Cruz
 
 ## John's Contribution 
 
