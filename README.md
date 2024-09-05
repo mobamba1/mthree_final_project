@@ -41,7 +41,7 @@ My Contribution:
 
 ## Back-End and Database
 
-The back-end of the application is located in a single file found in /python_scripts/app.py. This script loads the database, reads and processes the user input, updates the database and sends the processed data to the result page. 
+The back end of the app is contained in one file, located at /python_scripts/app.py. This script handles loading the database, processing the user’s input, updating the database, and then sending the processed data to the results page.
 
 My Contribution:
 -  Research for JSON data Passing for Grafan
@@ -141,7 +141,11 @@ Challenges:
 
 ## Grafana
 
+I used Grafana along with Prometheus to collect data from both the application and the instance it’s running on. This setup allowed me to create visual graphs that automatically update whenever new data is available.
 
+Challenges:
+- Since we were using SQLite, Grafana couldn't access the data directly. To fix this, We added a dedicated function in app.py that generates the data. This allowed me to integrate Grafana and make it read the content from the table.
+- Since our Grafana server was running on a different instance from the Jenkins/Kubernetes instance, we couldn’t get data from it. To solve this, I installed Prometheus on the Jenkins/Kubernetes instance, which allowed us to generate and capture readings from that instance.
 
 
 
