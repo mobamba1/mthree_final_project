@@ -3,20 +3,25 @@
 Authors: Marceli Ciesielski, John Dela Cruz, Eduar Mancera
 This project was submitted as a final project assignment at the mthree academy training on the 6th of September 2024.
 
-## Marceli Contributions
+## John's Contribution 
 
-Front-End HTML CSS files, backend Python file, selenium testing file, Dockerfile, SQL Lite
+Front-End HTML CSS files, backend Python, SQL Lite, Dcoker, Jenkins, Kubernetes, Nginx and Grafana 
 
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [SRE Concept and applications](#introduction)
 - [Front-End](#front-end)
-- [Back-End](#back=end)
+- [Back-End](#back-end)
 - [Docker](#docker)
 - [Jenkins](#jenkins)
 - [Kubernetes](#kubernetes)
 - [Grafana](#grafana)
 - [Testing](#testing)
+- [How to run](#testing)
+- [Difficulties](#testing)
+- [Future improvements](#introduction)
+- [Extras](#extras)
 
 ## Introduction
 
@@ -31,3 +36,6 @@ The front-end of the application consists of simple HTML and CSS files found in 
 ## Back-End
 
 The back-end of the application is located in a single file found in /python_scripts/app.py. This script loads the database, reads and processes the user input, updates the database and sends the processed data to the result page. 
+
+##Extras
+Original github link: https://github.com/ledmarceli/mthree_final_project
