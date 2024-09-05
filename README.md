@@ -125,3 +125,13 @@ How to start Jenkins server:
 
 ##Extras
 Original github link: https://github.com/ledmarceli/mthree_final_project
+
+Videos:
+Jenkins build with kubernetes 
+
+Grafana integrated with prometheus to scrap data from Jenkins/kubernetes instance
+
+Groups Helped:
+- Group 1 = sent and explained how I was able to expose kubemini services to the public ip.
+- Group 6 = why might their jenkins server is slow or have crashed. 
+
