@@ -230,16 +230,16 @@ These improvements align closely with SRE (Site Reliability Engineering) princip
 Original github link: https://github.com/ledmarceli/mthree_final_project
 
 Videos:
-Needs to download video.
+
+To watch the videos, you can either download the files in /videos or click the links bellow:
 
 Jenkins build with kubernetes:
 
-[Part: 1](https://github.com/mobamba1/mthree_final_project/blob/main/Videos/part1(split-video.com).mp4)
-[Part: 2](https://github.com/mobamba1/mthree_final_project/blob/main/Videos/part2(split-video.com).mp4)
+[Jenkins](https://youtu.be/yfAG7TPbNNQ)
 
 Update Database with Grafana Dashboard:
 
-[Update Video](https://github.com/mobamba1/mthree_final_project/blob/main/Videos/Update%20data%20video.mp4)
+[Update Database](https://youtu.be/SN28P0Po7EQ)
 
 
 
