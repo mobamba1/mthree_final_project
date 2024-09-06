@@ -10,14 +10,14 @@ Front-End HTML CSS files, backend Python, SQL Lite, Docker, Jenkins, Kubernetes,
 
 - [Introduction](#introduction)
 - [Infrastructure](#infrastructure)
-- [SRE Principles](#SREPrinciples)
-- [Front-End](#front-endanddatabase)
+- [SRE Principles](#SRE)
+- [Front-End](#front-end)
 - [Back-End](#Back-End)
 - [Docker](#docker)
 - [Jenkins](#jenkins)
 - [Kubernetes](#kubernetes)
 - [Grafana](#grafana)
-- [Future Improvements](#FutureImprovements)
+- [Future Improvements](#Improvements)
 - [Extras](#extras)
 
 ## Introduction
@@ -43,7 +43,7 @@ Image of Cloud Infrastructure:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Infrastructure%20VPC.JPG)
 
-## SRE Principles 
+## SRE 
 While building this project, we applied SRE principles to ensure that it adhered to best practices for reliability, scalability, and efficiency.
 1. Embracing risk 
 2. Service Level Objectives 
@@ -76,7 +76,7 @@ Image of Front-End:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/front-end.png)
 
-## Back-End and Database
+## Back-End
 
 The back end of the app is contained in one file, located at /python_scripts/app.py. This script handles loading the database, processing the user’s input, updating the database, and then sending the processed data to the results page. For unit testing, we used Selenium to validate user inputs, ensuring that the data was stored correctly and processed without errors.
 
@@ -206,7 +206,7 @@ Challenges:
 
 
 
-## Future Improvements:
+## Improvements:
 Though the project went well and we successfully integrated all the required tools, if we had more time, I would have liked to include additional tools such as Terraform, AWS Alarms, CloudWatch, Auto Scaling, and Load Balancers, along with Ansible. Combining these services would help reduce repetitive tasks, improve visibility, and better prepare for disaster recovery.
 
 Here’s how I would implement them:
