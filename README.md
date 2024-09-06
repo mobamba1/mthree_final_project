@@ -121,7 +121,7 @@ Image of Front-End:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/front-end.png)
 
-How to run:
+How to start Flask app:
 - Python app.py
 
 
