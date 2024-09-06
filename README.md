@@ -11,13 +11,12 @@ Front-End HTML CSS files, backend Python, SQL Lite, Docker, Jenkins, Kubernetes,
 - [Introduction](#introduction)
 - [Infrastructure](#infrastructure)
 - [SRE Principles](#SREPrinciples)
-- [Front-End](#front-end)
-- [Back-End](#Back-EndDatabase)
+- [Front-End](#front-endanddatabase)
+- [Back-End](#Back-End)
 - [Docker](#docker)
 - [Jenkins](#jenkins)
 - [Kubernetes](#kubernetes)
 - [Grafana](#grafana)
-- [Testing](#testing)
 - [Future Improvements](#FutureImprovements)
 - [Extras](#extras)
 
@@ -79,7 +78,7 @@ Image of Front-End:
 
 ## Back-End and Database
 
-The back end of the app is contained in one file, located at /python_scripts/app.py. This script handles loading the database, processing the user’s input, updating the database, and then sending the processed data to the results page.
+The back end of the app is contained in one file, located at /python_scripts/app.py. This script handles loading the database, processing the user’s input, updating the database, and then sending the processed data to the results page. For unit testing, we used Selenium to validate user inputs, ensuring that the data was stored correctly and processed without errors.
 
 My Contribution:
 -  Research for JSON data Passing for Grafana and update imports on app.py
