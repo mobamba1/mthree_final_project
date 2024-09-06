@@ -235,8 +235,6 @@ AWS Alarms, CloudWatch, and Auto Scaling work together seamlessly. AWS Alarms no
 Load Blancer:
 A load balancer is a tool that distributes incoming traffic across multiple servers to prevent any single server from becoming overwhelmed. It helps improve performance and reliability by balancing the load, ensuring smooth operation even during traffic spikes. For this project, I would use a load balancer specifically for the Flask app by configuring an AWS Elastic Load Balancer (ELB). This would route traffic to healthy instances running the Flask app and work with Auto Scaling to add more instances when needed. This setup ensures the Flask app handles traffic efficiently and maintains high availability.
 
-These improvements align closely with SRE (Site Reliability Engineering) principles by focusing on automation, scalability, and reliability. By using tools like Auto Scaling, load balancers, and monitoring with CloudWatch and AWS Alarms, we reduce manual intervention and improve system resilience. Automating tasks like scaling instances and distributing traffic helps prevent outages and ensures the system remains performant under stress. Additionally, setting up alerts for issues like high CPU usage allows us to proactively address problems before they impact users. Overall, these enhancements promote efficiency, reduce toil, and help maintain service reliability, which are core SRE goals.
-
 ## Extras
 
 Original github link: https://github.com/ledmarceli/mthree_final_project
