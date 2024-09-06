@@ -44,6 +44,9 @@ Image of Flow chart:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/flowchart.JPG)
 
+How to run:
+- Python app.py
+
 Image of Cloud Infrastructure:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Infrastructure%20VPC.JPG)
