@@ -11,6 +11,7 @@ Front-End HTML CSS files, backend Python, SQL Lite, Docker, Jenkins, Kubernetes,
 - [Introduction](#introduction)
 - [Infrastructure](#infrastructure)
 - [SRE Principles](#SRE)
+- [Prerequisites](#Prerequisites)
 - [Front-End](#front-end)
 - [Back-End](#Back-End)
 - [Docker](#docker)
@@ -76,6 +77,30 @@ Eliminating Toil/Automation: By introducing Jenkins, I was able to automate our 
 Monitoring Distributed Systems: We used Grafana to monitor both our instances and the application. This allowed me to create custom dashboards to track the health of the system and quickly identify any issues that needed attention.
 
 Release Engineering: We used Git and GitHub to track project tasks and manage new releases to the production environment. Working in daily sprints, we assigned tasks, provided updates, and coordinated effectively under time pressure. This integration allowed us to communicate clearly and prioritize our work efficiently.
+
+## Prerequisites:
+Before you run the repository, follow these steps to ensure all required tools are installed and ready:
+
+1. Update Linux machine
+   -  sudo apt-get update
+
+3. Need to download and install python:
+   - sudo apt-get install python3 flask sqlite3
+
+5. Need to download and install Docker: sudo apt-get docker
+   - sudo apt-get install docker.io
+
+7. Needs to donload and install jenkins:
+   - wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+   - sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+   - sudo apt-get update
+   - sudo apt-get install jenkins
+
+9. Needs to download and install kubemini:
+   - curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+   - sudo dpkg -i minikube_latest_amd64.deb
+
+
 
 ## Front-End
 
