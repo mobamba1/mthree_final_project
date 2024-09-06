@@ -34,6 +34,7 @@ For continuous integration and deployment, Jenkins was set up to automate the bu
 To monitor the system's performance, Grafana was implemented, providing useful insights into the application's metrics. Lastly, AWS services were used to deploy the project, taking advantage of cloud hosting to ensure scalability and reliability.
 
 ## Infrastructure
+Mthree project pictures/flowchart.JPG
 
 ## SRE Principles 
 ## Front-End
