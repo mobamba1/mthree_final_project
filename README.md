@@ -9,7 +9,8 @@ Front-End HTML CSS files, backend Python, SQL Lite, Dcoker, Jenkins, Kubernetes,
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [SRE Concept and applications](#introduction)
+- [Infrastructure](#infrastrcuture)
+- [SRE Principles](#SREPrinciples)
 - [Front-End](#front-end)
 - [Back-End](#Back-EndDatabase)
 - [Docker](#docker)
@@ -32,6 +33,9 @@ For continuous integration and deployment, Jenkins was set up to automate the bu
 
 To monitor the system's performance, Grafana was implemented, providing useful insights into the application's metrics. Lastly, AWS services were used to deploy the project, taking advantage of cloud hosting to ensure scalability and reliability.
 
+## Infrastructure
+
+## SRE Principles 
 ## Front-End
 
 The front end of the app is made up of basic HTML and CSS files, which are stored in /python_scripts/templates for HTML and /python_scripts/static for CSS. These files provide a simple, user-friendly interface that lets users interact with the app and submit their information through an HTML form to the backend for processing.
@@ -149,28 +153,24 @@ Challenges:
 
 
 
+## Future Improvements:
+Though the project went well and we successfully integrated all the required tools, if we had more time, I would have liked to include additional tools such as Terraform, AWS Alarms, CloudWatch, Auto Scaling, and Load Balancers, along with Ansible. Combining these services would help reduce repetitive tasks, improve visibility, and better prepare for disaster recovery.
 
+Here’s how I would implement them:
 
+Terraform: 
+I would create a Terraform configuration file that defines all the AWS resources we need, like VPC, EC2, and Security Groups. This would help us maintain and manage our cloud infrastructure. Since Terraform is cloud-agnostic, the same configuration could be used with other cloud providers like Azure or GCP. Additionally, if our cloud environment fails, we could use the Terraform configuration to quickly rebuild our services in a different account or even on a different cloud provider.
 
+Ansible: 
+Is another configuration management tool that allows you to connect to multiple instances and install packages. It would help us manage our infrastructure by ensuring all instances have the correct packages installed. I would implement this by setting up a host node for Ansible, which would connect to other instances and handle installing the necessary software and packages to keep everything running smoothly.
 
+AWS Alarms, Cloudwatch and Auto Scaling: 
+AWS Alarms, CloudWatch, and Auto Scaling work together seamlessly. AWS Alarms notify users via SNS (Simple Notification Service) when a configured threshold, like CPU usage, is triggered. CloudWatch is the service that monitors and tracks the metrics of instances, while Auto Scaling adjusts the instance's capacity, either by scaling horizontally or vertically, to ensure there are enough resources to prevent crashes. I would configure CloudWatch to monitor the metrics of the Jenkins instance and set up an alarm to notify me if it crosses a defined threshold. In case the alarm is triggered, Auto Scaling would automatically scale the instance, reducing the manual effort required to manage performance issues.
 
+Load Blancer:
+A load balancer is a tool that distributes incoming traffic across multiple servers to prevent any single server from becoming overwhelmed. It helps improve performance and reliability by balancing the load, ensuring smooth operation even during traffic spikes. For this project, I would use a load balancer specifically for the Flask app by configuring an AWS Elastic Load Balancer (ELB). This would route traffic to healthy instances running the Flask app and work with Auto Scaling to add more instances when needed. This setup ensures the Flask app handles traffic efficiently and maintains high availability.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+These improvements align closely with SRE (Site Reliability Engineering) principles by focusing on automation, scalability, and reliability. By using tools like Auto Scaling, load balancers, and monitoring with CloudWatch and AWS Alarms, we reduce manual intervention and improve system resilience. Automating tasks like scaling instances and distributing traffic helps prevent outages and ensures the system remains performant under stress. Additionally, setting up alerts for issues like high CPU usage allows us to proactively address problems before they impact users. Overall, these enhancements promote efficiency, reduce toil, and help maintain service reliability, which are core SRE goals.
 
 ## Extras
 
