@@ -84,23 +84,23 @@ Before you run the repository, follow these steps to ensure all required tools a
 1. Update Linux machine
    -  sudo apt-get update
 
-3. Need to download and install python:
+2. Need to download and install python:
    - sudo apt-get install python3 flask sqlite3
 
-5. Need to download and install Docker: sudo apt-get docker
+3. Need to download and install Docker: sudo apt-get docker
    - sudo apt-get install docker.io
 
-7. Needs to donload and install jenkins:
+4. Needs to donload and install jenkins:
    - wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
    - sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
    - sudo apt-get update
    - sudo apt-get install jenkins
 
-9. Needs to download and install kubemini:
+5. Needs to download and install kubemini:
    - curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
    - sudo dpkg -i minikube_latest_amd64.deb
 
-10. Need to install nginx:
+6. Need to install nginx:
    - sudo apt install nginx
 
 
