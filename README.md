@@ -43,6 +43,18 @@ Image of Cloud Infrastructure:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Infrastructure%20VPC.JPG)
 
+Here are the security measures we implemented:
+
+Security Groups: I had set up security groups to allow only specific ports to communicate with our instances, limiting access and enhancing security.
+
+IAM Users: AWS Identity and Access Management (IAM) to create user accounts for all team members, ensuring that only authorized individuals have access to the cloud environment.
+
+PEM Keys: Generated PEM keys for SSH access, preventing unauthorized external users from accessing our instances.
+
+Private Kubernetes Cluster: Deployed Kubernetes in a cluster using private IP addresses, preventing external communication except through Nginx port forwarding.
+
+Jenkins Security: Secured our Jenkins server and Linux jenkins user by adding user authentication, preventing external threats from executing builds without proper authorization.
+
 ## SRE 
 While building this project, we applied SRE principles to ensure that it adhered to best practices for reliability, scalability, and efficiency.
 1. Embracing risk 
