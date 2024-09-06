@@ -4,12 +4,12 @@ Authors: John Dela Cruz
 
 ## John's Contribution 
 
-Front-End HTML CSS files, backend Python, SQL Lite, Dcoker, Jenkins, Kubernetes, Nginx and Grafana 
+Front-End HTML CSS files, backend Python, SQL Lite, Docker, Jenkins, Kubernetes, Nginx and Grafana 
 
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Infrastructure](#infrastrcuture)
+- [Infrastructure](#infrastructure)
 - [SRE Principles](#SREPrinciples)
 - [Front-End](#front-end)
 - [Back-End](#Back-EndDatabase)
@@ -34,9 +34,38 @@ For continuous integration and deployment, Jenkins was set up to automate the bu
 To monitor the system's performance, Grafana was implemented, providing useful insights into the application's metrics. Lastly, AWS services were used to deploy the project, taking advantage of cloud hosting to ensure scalability and reliability.
 
 ## Infrastructure
-Mthree project pictures/flowchart.JPG
+We hosted our project on AWS, and the images below illustrate the data flow and how the tools and AWS services interact with one another.
+
+Image of Flow chart:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/flowchart.JPG)
+
+Image of Cloud Infrastructure:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Infrastructure%20VPC.JPG)
 
 ## SRE Principles 
+While building this project, we applied SRE principles to ensure that it adhered to best practices for reliability, scalability, and efficiency.
+1. Embracing risk 
+2. Service Level Objectives 
+3. Eliminate Toil 
+4. Monitor Distributed Systems 
+5. Automation 
+6. Release Engineering 
+7. Simplicity
+
+We achieved this by doing the following:
+
+Embracing risk/Simplicity: We had to carefully consider the cost of using a larger instance to run both Jenkins and Kubernetes on the same machine. By evaluating which instance type offered the best performance at the lowest cost, we were able to minimize expenses. This approach ensured simplicity, allowing Kubernetes and Jenkins to work together seamlessly without overcomplicating our infrastructure.
+
+Service Level Objective: To meet our Service Level Objectives, we chose to use an on-demand instance with sufficient performance. This ensured that our tools were available whenever needed and could handle the required tasks efficiently. We also chose to use SQLite integrated directly with the Flask app, reducing the latency between the database and the application.
+
+Eliminating Toil/Automation: By introducing Jenkins, I was able to automate our builds, not just for live deploymnet but also for testing. This help reduce the time of testing and providing more allowance for development process. 
+
+Monitoring Distributed Systems: We used Grafana to monitor both our instances and the application. This allowed me to create custom dashboards to track the health of the system and quickly identify any issues that needed attention.
+
+Release Engineering: We used Git and GitHub to track project tasks and manage new releases to the production environment. Working in daily sprints, we assigned tasks, provided updates, and coordinated effectively under time pressure. This integration allowed us to communicate clearly and prioritize our work efficiently.
+
 ## Front-End
 
 The front end of the app is made up of basic HTML and CSS files, which are stored in /python_scripts/templates for HTML and /python_scripts/static for CSS. These files provide a simple, user-friendly interface that lets users interact with the app and submit their information through an HTML form to the backend for processing.
@@ -44,17 +73,28 @@ The front end of the app is made up of basic HTML and CSS files, which are store
 My Contribution:
 - Code review and changes for import modules and text.
 
+Image of Front-End:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/front-end.png)
+
 ## Back-End and Database
 
 The back end of the app is contained in one file, located at /python_scripts/app.py. This script handles loading the database, processing the user’s input, updating the database, and then sending the processed data to the results page.
 
 My Contribution:
--  Research for JSON data Passing for Grafan
+-  Research for JSON data Passing for Grafana and update imports on app.py
+
+Image of Database:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/database_schema.png)
 
 ## Docker
 I created a Docker image using a Dockerfile, which allowed me to containerize the application for consistent deployment. To ensure it was working properly, I set up the container to access port 5000, which was necessary for the application’s functionality. 
 Later on, I will be using Docker Hub to store my Docker image, allowing Minikube to pull the image from the remote repository for deployment in my Kubernetes environment.
-## Add docker file image 
+
+Image of Dockerhub:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Dockerhub.png)
 
 Challenges with Docker:
 - One challenge I faced was ensuring that port 5000 was open in the AWS security groups, as the container needed to communicate through that port. To apply this change, I had to restart or stop and start the AWS instance to make sure the new settings took effect.
@@ -71,7 +111,10 @@ Run docker container:
 
 ## Jenkins:
 I set up a Jenkins server to handle continuous integration and delivery (CI/CD), which made it much easier and faster to deploy new builds. This helped cut down on repetitive tasks, allowing us to save time on testing and releasing updates. As a result, we had more time to focus on development.
-## Add image of jenkins
+
+Image of Jenkins pipeline:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Jenkinsbuild.png)
 
 Challenges with Jenkins:
 When I first set up Jenkins, everything worked smoothly, and I could access the web interface through the IP address and port. However, after stopping and restarting the instance, Jenkins would start very slowly. I discovered that this was due to several issues, including unclean shutdowns of the Jenkins service, old builds piling up, and plugin downloads. These factors combined to slow down Jenkins during startup.
@@ -104,7 +147,9 @@ How to start Jenkins server:
 ## Kubernetes
 Kubernetes was used to deploy Docker images of the Flask application. By using Minikube along with Docker Hub, I was able to easily orchestrate the services, seamlessly pulling the latest image from Docker Hub for deployment.
 
-## Add Kubernetes Image here
+Image of Kubernetes cluster:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Kubernetes.png)
 
 How to deploy images with kubemini:
 
@@ -132,6 +177,10 @@ How to deploy images with kubemini:
     - Update the configuration with your instance's public IP and Minikube's IP/NodePort:
     - server_name <your-instance-public-ip>;  # Use the public IP of your instance
     - proxy_pass http://<minikube-ip>:<NodePort>;  # Use Minikube's IP and the NodePort of your service
+
+Image of nginx:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/nginx.png)
 10. Check Nginx Configuration and Reload:
     - sudo nginx -t
     - sudo systemctl reload nginx
@@ -147,6 +196,10 @@ Challenges:
 ## Grafana
 
 I used Grafana along with Prometheus to collect data from both the application and the instance it’s running on. This setup allowed me to create visual graphs that automatically update whenever new data is available.
+
+Image of Grafana Dashboard:
+
+![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Grafana.png)
 
 Challenges:
 - Since we were using SQLite, Grafana couldn't access the data directly. To fix this, We added a dedicated function in app.py that generates the data. This allowed me to integrate Grafana and make it read the content from the table.
