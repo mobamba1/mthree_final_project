@@ -34,7 +34,7 @@ For continuous integration and deployment, Jenkins was set up to automate the bu
 To monitor the system's performance, Grafana was implemented, providing useful insights into the application's metrics. Lastly, AWS services were used to deploy the project, taking advantage of cloud hosting to ensure scalability and reliability.
 
 ## Infrastructure
-We hosted our project on AWS, and the images below illustrate the data flow and how the tools and AWS services interact with one another.
+We hosted our project on AWS, and the images below illustrate the data flow and how the tools and AWS services interact with one another. All tools used was deplying using AWS EC2.
 
 Image of Flow chart:
 
