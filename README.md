@@ -230,6 +230,7 @@ These improvements align closely with SRE (Site Reliability Engineering) princip
 Original github link: https://github.com/ledmarceli/mthree_final_project
 
 Videos:
+Needs to download video.
 
 Jenkins build with kubernetes:
 
