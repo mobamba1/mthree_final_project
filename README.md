@@ -5,6 +5,9 @@ Authors: John Dela Cruz
 ## John's Contribution 
 
 Front-End HTML CSS files, backend Python, SQL Lite, Docker, Jenkins, Kubernetes, Nginx and Grafana 
+## Other Contributors to the Project:
+- Marceli Ciesielski
+- Eduar Mancera
 
 ## Table of Contents
 
@@ -267,6 +270,13 @@ Load Blancer:
 A load balancer is a tool that distributes incoming traffic across multiple servers to prevent any single server from becoming overwhelmed. It helps improve performance and reliability by balancing the load, ensuring smooth operation even during traffic spikes. For this project, I would use a load balancer specifically for the Flask app by configuring an AWS Elastic Load Balancer (ELB). This would route traffic to healthy instances running the Flask app and work with Auto Scaling to add more instances when needed. This setup ensures the Flask app handles traffic efficiently and maintains high availability.
 
 ## Extras
+
+Testing (Taken from Marceli's github: https://github.com/ledmarceli/mthree_final_project) 
+While developing the infrastructure we ensured that on each expansion, the operation of the whole app is being manually tested. In addition we also wrote the unit-testing code that can test if the application is working correctly from the user perspective. The code can be found in python_scripts/unit_testing.py. To effectively prepare such a test we used the selenium library in python. This allows for automating a web browser and simulating the user's experience in the web app. The test first accesses the web app through http and finds the form elements and tries to make a valid submission in the form. Then it checks if the result webpage is returned correctly. It is thereby able to do a quick check on whether the web app is working correctly from the user's perspective.
+
+It would be possible to integrate such a test within Jenkins and this should be considered when discussing potential improvement and expansion of our project.
+
+The image below shows the selenium output if the test is working correctly (two error messages on top should be ignored as they refer to insecure connection through http, not https and have no relevance to the functioning of the app).
 
 Original github link: https://github.com/ledmarceli/mthree_final_project
 
