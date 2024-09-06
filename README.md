@@ -6,8 +6,8 @@ Authors: John Dela Cruz
 
 Front-End HTML CSS files, backend Python, SQL Lite, Docker, Jenkins, Kubernetes, Nginx and Grafana 
 ## Other Contributors to the Project:
-- Marceli Ciesielski
-- Eduar Mancera
+- Marceli Ciesielski: https://github.com/ledmarceli/mthree_final_project/blob/main/README_Marceli.md#testing
+- Eduar Mancera: https://github.com/ledmarceli/mthree_final_project/blob/main/README_Eduar.md
 
 ## Table of Contents
 
