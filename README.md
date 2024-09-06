@@ -100,6 +100,10 @@ Before you run the repository, follow these steps to ensure all required tools a
    - curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
    - sudo dpkg -i minikube_latest_amd64.deb
 
+10. Need to install nginx:
+   - sudo apt install nginx
+
+
 
 
 ## Front-End
@@ -217,9 +221,11 @@ How to deploy images with kubemini:
 Image of nginx:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/nginx.png)
+
 10. Check Nginx Configuration and Reload:
     - sudo nginx -t
     - sudo systemctl reload nginx
+
 11. After configuring Nginx, your Flask app should be accessible via the instance's public IP on port 5000:
     - http://instance_ip:5000
 
