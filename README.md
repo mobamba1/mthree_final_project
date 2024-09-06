@@ -43,7 +43,7 @@ Image of Cloud Infrastructure:
 
 ![Screenshot_2024-09-03_at_12 38 13-removebg-preview](https://github.com/mobamba1/mthree_final_project/blob/main/Mthree%20project%20pictures/Infrastructure%20VPC.JPG)
 
-Here are the security measures we implemented:
+Here are the security measures I implemented:
 
 Security Groups: I had set up security groups to allow only specific ports to communicate with our instances, limiting access and enhancing security.
 
